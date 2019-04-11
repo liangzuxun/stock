@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="form-group">
+      <input type="text" placeholder="输入商品名称" class="form-control" [formControl]="titleFilter">
+    </div>
+  </div>
+</div>
+<div class="col-md-4 col-sm-4 col-lg-4" *ngFor="let product of products | filter:'title':keyword">
+   
+  <div class="thumbnail"
+>
+    <img src="http://placehold.it/320x150" alt="">
+    <div class="caption">
+      <h4 class="pull-right">{{product.price}}元</h4>
+      <h4>
+        <a [routerLink]="['/product',product.id]" [queryParams]="{fdsfdas:'12313'}">{{product.title}}</a>
+        <p>{{product.desc}}</p>
+      </h4>
+    </div>
+    <app-stars [rating]="product.rating"></app-stars>
+  </div>
+</div>
