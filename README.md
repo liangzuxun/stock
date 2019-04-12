@@ -16,9 +16,34 @@ product 产品页
 
 product-detail 产品详情
 
-search 产品搜索组件
+search 产品搜索表单
 
 service 服务
 
 stars 星级评价组件
+
+serve nodejs 服务器
+
+
+主要用到的angular模块
+
+双向绑定
+
+响应式表单
+
+路由
+
+数据绑定
+
+自定义管道
+
+服务
+
+http服务
+
+node+exprss 创建服务器
+
+
+
+
 

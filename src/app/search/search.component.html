@@ -1,19 +1,29 @@
-<form action="" name="searchForm" role="form">
-  <div class="form-group">
+<form name="searchForm" role="form" [formGroup]="formModel" (ngSubmit)="onSearch()" >
+  <div class="form-group" [class.has-error]="title.hasError('minlength')">
     <label for="">商品名称:</label>
-    <input type="text" id="productTitle" placeholder="商品名称" class="form-control">
+    <input type="text" id="productTitle" placeholder="商品名称" 
+    
+    class="form-control" formControlName="title">
+    <span class="help-block" [class.hidden]="!title.hasError('minlength')">
+      请输入至少3个字
+    </span>
   </div>
-  <div class="form-group">
+  <div class="form-group" [class.has-error]="price.hasError('positiveNumber')" >
     <label for="">商品价格</label>
-    <input type="number" id="productPrice" placeholder="商品价格" class="form-control">
+    <input type="number" id="productPrice" placeholder="商品价格" class="form-control" 
+    formControlName="price">
+    <span class="help-block" [class.hidden]="!price.hasError('positiveNumber')">
+      必须为正数
+    </span>
   </div>
   <div class="form-group">
     <label for="" class="productCategory">商品类别:</label>
     <select name="" id="productCategory" class="form-control">
-
+      <option value="-1">全部分类</option>
+      <option [value]="type" *ngFor="let type of types">{{type}}</option>
     </select>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn-primary btn-block">搜索</button>
+    <button type="submit" class="btn-primary btn-block btn">搜索</button>
   </div>
 </form>

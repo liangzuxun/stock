@@ -9,10 +9,10 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./product.component.styl']
 })
 export class ProductComponent implements OnInit {
-  private products:any[]=[];
-  private keyword:string="";
+   products:any[]=[];
+  keyword:string="";
   private filterArray:any[] = []
-  private titleFilter:FormControl = new FormControl('')
+  titleFilter:FormControl = new FormControl('')
   constructor(private proSer:ProductService) {
    }
   ngOnInit() {

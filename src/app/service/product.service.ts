@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  private products: Product[] = [new Product(0, 'iPhone', 5899, '最新款iphone', 3),
-  new Product(1, 'iPhone', 5899, '最新款iphone', 3),
-  new Product(2, 'sumsung7', 6888, 'sumsungGalaxy7', 3),
-  new Product(3, 'iPhone', 5899, '最新款iphone', 3),
-  new Product(4, 'iPhone', 5899, '最新款iphone', 3),
-  new Product(5, 'iPhone', 5899, '最新款iphone', 3),
+  private products: Product[] = [
+  new Product(0, '第一个商品', 5899, '最新款iphone', 3,['图书']),
+  new Product(1, '第二个商品', 6888, 'sumsungGalaxy7', 3,['硬件设备']),
+  new Product(2, '第三个商品', 5899, '最新款硬盘', 3,['电子产品','硬件设备']),
+  new Product(3, '第四个商品', 5899, '最新款iprd', 3,['电子产品']),
+  new Product(4, '第五个商品', 5899, '新书', 3,['图书']),
+  new Product(5, '第六个商品', 5899, '最新款imac', 3,['电子产品','硬件设备']),
   ]
   private comments:Comment[] = [
     new Comment(1,1,'2017-1-1 22:22:22',"这个商品不错",'王菲',3),
@@ -21,6 +22,9 @@ export class ProductService {
   ]
   getProduct() {
     return this.products
+  }
+  getAllTypes():string[]{
+    return ['电子产品','硬件设备','图书']
   }
   getSingleProduct(id: number):Product {
     return this.products.find((product) => product.id === id)
@@ -38,7 +42,8 @@ export class Product {
     public title: string,
     public price: number,
     public desc: string,
-    public rating: number
+    public rating: number,
+    public types:any[]
   ) {
   }
 }
@@ -50,6 +55,13 @@ export class Comment{
     public content:string,
     public user:string,
     public rating:number){
+
+  }
+}
+export class ProductTypes{
+  constructor(
+
+  ){
 
   }
 }

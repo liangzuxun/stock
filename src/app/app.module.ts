@@ -14,7 +14,10 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HomeComponent } from './home/home.component'
 import {ProductService} from './service/product.service'
 import {ReactiveFormsModule} from '@angular/forms';
-import { FilterPipe } from './pipe/filter.pipe'
+import { FilterPipe } from './pipe/filter.pipe';
+import { ChildComponent } from './pages/child/child.component';
+// import { TemplateFormComponent } from './template-form/template-form.component';
+// import { ReactiveFormComponent } from './reactive-form/reactive-form.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { FilterPipe } from './pipe/filter.pipe'
     StarsComponent,
     ProductDetailComponent,
     HomeComponent,
-    FilterPipe
+    FilterPipe,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
